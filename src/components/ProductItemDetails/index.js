@@ -2,7 +2,7 @@ import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
-import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
+import {BsPlusSquare, BsDashSquare} from 'react-icons'
 import {ThreeDots} from 'react-loader-spinner'
 
 
