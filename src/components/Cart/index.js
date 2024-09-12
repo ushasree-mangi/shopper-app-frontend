@@ -80,7 +80,7 @@ class Cart extends Component {
       
     
     return(
-      <>
+      <div className='cart-container'>
       <p className='cart-heading'>Cart Items</p>
       
       <div className='cart-items-container'>
@@ -90,10 +90,10 @@ class Cart extends Component {
           })}
          
       </div>
-      <div>
+      <div className='total_price-container'>
             <h1>Total Price : {totalPrice}</h1>
           </div>
-      </>
+      </di>
 
     )
 
