@@ -75,7 +75,10 @@ class Cart extends Component {
   )
 
   renderCartItems=()=>{
-    const {cartItemsList}=this.state
+    const {cartItemsList}=this.state 
+    const totalPrice=cartItemsList.reduce((acc,eachItem)=>acc+eachItem.price , 0 )
+      
+    
     return(
       <>
       <p className='cart-heading'>Cart Items</p>
@@ -85,6 +88,9 @@ class Cart extends Component {
            
             return <CartItem productId={eachItem.product_id} name={eachItem.name} imageUrl={eachItem.imageUrl} quantity={eachItem.quantity} price={eachItem.price}/>
           })}
+          <div>
+            <h1>Total Price : {totalPrice}</h1>
+          </div>
       </div>
       </>
 

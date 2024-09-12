@@ -11,6 +11,7 @@ const CartItem =(props) => {
                 
                 <p className='cart-item-price'>Price : {price}</p>
                 <p className='cart-item-quantity'>Quantity : {quantity}</p>
+                <p className='cart-item-total-price'>Total Price : {price*quantity}</p>
             </div>
         </Link>
     )
