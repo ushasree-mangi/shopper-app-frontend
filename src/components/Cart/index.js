@@ -76,7 +76,7 @@ class Cart extends Component {
 
   renderCartItems=()=>{
     const {cartItemsList}=this.state 
-    const totalPrice=cartItemsList.reduce((acc,eachItem)=>acc+eachItem.price , 0 )
+    const totalPrice=cartItemsList.reduce((acc,eachItem)=>acc+eachItem.price*eachItem.quantity , 0 )
       
     
     return(
