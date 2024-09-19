@@ -22,6 +22,8 @@ class Cart extends Component {
     this.getCartItems()
   }
 
+  
+
   getCartItems=async()=>{
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
@@ -52,7 +54,24 @@ class Cart extends Component {
     }
   }
 
-  
+  deleteCartItem=async()=>{
+    const apiUrl = `https://shopper-backend-app.onrender.com/cart/:productId`
+    const jwtToken = Cookies.get('jwt_token')
+    const options = {
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+        'Content-Type':'application/json'
+      },
+      method: 'DELETE',
+    }
+    const response = await fetch(apiUrl, options)
+    if (response.ok) {
+      this.getCartItems()
+    }
+    else{
+      alert("An Error occurred while deleting cart item")
+    }
+  }
     
     renderLoadingView = () => (
       <div className="products-loader-container">
@@ -86,7 +105,7 @@ class Cart extends Component {
       <div className='cart-items-container'>
           {cartItemsList.map((eachItem)=>{
            
-            return <CartItem productId={eachItem.product_id} name={eachItem.name} imageUrl={eachItem.imageUrl} quantity={eachItem.quantity} price={eachItem.price}/>
+            return <CartItem deleteCartItem={this.deleteCartItem} productId={eachItem.product_id} name={eachItem.name} imageUrl={eachItem.imageUrl} quantity={eachItem.quantity} price={eachItem.price}/>
           })}
          
       </div>
