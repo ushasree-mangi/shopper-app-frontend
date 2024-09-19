@@ -15,7 +15,7 @@ const CartItem =(props) => {
                 <p className='cart-item-total-price'>Total Price : {price*quantity}</p>
             </div>
             <div className='delete-icon'>
-                <MdDelete />
+                <MdDelete style={{ fontSize: '40px' }}/>
             </div>
         </Link>
     )
