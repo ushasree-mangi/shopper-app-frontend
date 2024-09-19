@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { MdDelete } from "react-icons/md";
 
 import './index.css'
 const CartItem =(props) => {
@@ -12,6 +13,9 @@ const CartItem =(props) => {
                 <p className='cart-item-price'>Price : {price}</p>
                 <p className='cart-item-quantity'>Quantity : {quantity}</p>
                 <p className='cart-item-total-price'>Total Price : {price*quantity}</p>
+            </div>
+            <div className='delete-icon'>
+                <MdDelete />
             </div>
         </Link>
     )
