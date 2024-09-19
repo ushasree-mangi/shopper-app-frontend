@@ -54,8 +54,9 @@ class Cart extends Component {
     }
   }
 
-  deleteCartItem=async()=>{
-    const apiUrl = `https://shopper-backend-app.onrender.com/cart/:productId`
+  deleteCartItem=async(id)=>{
+    console.log(id)
+    const apiUrl = `https://shopper-backend-app.onrender.com/cart/`
     const jwtToken = Cookies.get('jwt_token')
     const options = {
       headers: {
@@ -63,6 +64,7 @@ class Cart extends Component {
         'Content-Type':'application/json'
       },
       method: 'DELETE',
+      body:JSON.stringify({productId:id})
     }
     const response = await fetch(apiUrl, options)
     if (response.ok) {

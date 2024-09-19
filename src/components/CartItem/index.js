@@ -8,9 +8,10 @@ class CartItem extends Component {
    state={isClickedOnDelete:false}
     
     onDeleteCartItem=()=>{
+        const {productId}=this.props
         this.setState((prev)=>({isClickedOnDelete:!prev.isClickedOnDelete}))
         const {deleteCartItem}=this.props
-        deleteCartItem()
+        deleteCartItem(productId)
 
     }
 
