@@ -91,9 +91,9 @@ class Cart extends Component {
          
       </div>
       <div className='total_price-container'>
-            <h1>Total Price : {totalPrice}</h1>
+            <h1>Cart Total Price : {totalPrice}</h1>
           </div>
-      </di>
+      </div>
 
     )
 

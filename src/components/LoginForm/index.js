@@ -11,6 +11,7 @@ class LoginForm extends Component {
     password: '',
     showApiStatusText: false,
     apiStatusText: '',
+    showPassword:false,
   }
 
   onChangeUsername = event => {
@@ -35,6 +36,10 @@ class LoginForm extends Component {
     this.setState({showApiStatusText: true,
       apiStatusText: errorMsg})
   }
+
+  toggleShowPassword = () => {
+    this.setState((prev) => ({showPassword : !prev.showPassword}))
+  };
 
   submitForm = async event => {
     event.preventDefault()
@@ -61,19 +66,28 @@ class LoginForm extends Component {
   }
 
   renderPasswordField = () => {
-    const {password} = this.state
+    const {password,showPassword} = this.state
     return (
       <>
         <label className="input-label" htmlFor="password">
           PASSWORD
         </label>
         <input
-          type="password"
+          type={showPassword ? 'text' : 'password'}
           id="password"
           className="password-input-field"
           value={password}
           onChange={this.onChangePassword}
         />
+        <div className='checkbox-container'>
+          <input  className='password-checkbox'
+                  type="checkbox"
+                  id="showPassword"
+                  checked={showPassword}
+                  onChange={this.toggleShowPassword}
+              /> 
+              Show Password
+          </div>
       </>
     )
   }

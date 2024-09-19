@@ -137,3 +137,16 @@
     width: 100%;
   }
 }
+.checkbox-container{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  align-items: center;
+
+  margin-top: 12px;
+}
+.password-checkbox{
+  margin-top: 5px;
+  height: 23px;
+  margin-right: 5px;
+}
