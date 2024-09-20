@@ -55,10 +55,13 @@ class Cart extends Component {
   }
 
   deleteCartItem=async(id)=>{
+    this.setState({
+      apiStatus: apiStatusConstants.inProgress,
+    })
    
     const apiUrl = `https://shopper-backend-app.onrender.com/cart/`
     const jwtToken = Cookies.get('jwt_token')
-    console.log(jwtToken)
+    
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -71,16 +74,27 @@ class Cart extends Component {
     const fetchedData = await response.json()
     if (response.ok) {
       
-      const {cartItems,message} = fetchedData
-     console.log(message)
+      const {cartItems} = fetchedData 
+     
       this.setState({
         cartItemsList:cartItems,
-       
+        apiStatus: apiStatusConstants.success,
       })
     }
     else{
       const {error}=fetchedData
-      alert(error)
+      
+      if (response.status === 404) {
+       
+        this.setState({
+          apiStatus: apiStatusConstants.failure})
+
+      } else if (response.status === 500) {
+        alert(error)
+       
+        this.setState({
+          apiStatus: apiStatusConstants.success})
+      }
     }
   }
     
@@ -116,7 +130,7 @@ class Cart extends Component {
       <div className='cart-items-container'>
           {cartItemsList.map((eachItem)=>{
            
-            return <CartItem deleteCartItem={this.deleteCartItem} productId={eachItem.product_id} name={eachItem.name} imageUrl={eachItem.imageUrl} quantity={eachItem.quantity} price={eachItem.price}/>
+            return <CartItem deleteCartItem={this.deleteCartItem} key={eachItem.product_id} productId={eachItem.product_id} name={eachItem.name} imageUrl={eachItem.imageUrl} quantity={eachItem.quantity} price={eachItem.price}/>
           })}
          
       </div>

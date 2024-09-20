@@ -50,9 +50,9 @@ class ProductItemDetails extends Component {
     if (response.ok) {
       const fetchedData = await response.json()
       const {productDetails} = fetchedData
-     
+    
       this.setState({
-        productData: productDetails[0],
+        productData: productDetails,
         apiStatus: apiStatusConstants.success,
       })
     }
@@ -112,7 +112,7 @@ class ProductItemDetails extends Component {
       method: 'POST',
       body:JSON.stringify(productDetails)
     }
-    const response=await fetch("https://shopper-backend-app.onrender.com/cart/add",options)
+    const response=await fetch("http://localhost:4000/cart/add",options)
     if(response.ok){ 
     const data=await response.json()
     const {message}=data

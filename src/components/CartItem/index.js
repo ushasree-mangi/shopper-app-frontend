@@ -18,7 +18,10 @@ class CartItem extends Component {
     render(){ 
         const {name,productId,price,quantity,imageUrl}=this.props 
         return(
-            <Link to={`/products/${productId}`} className='cart-item-container'>
+            <div className='cart-item-container'>
+
+                <Link to={`/products/${productId}`} className='img-details-container'>
+
                 <img alt="product" src={imageUrl}/>
                 <div>
                     <p className='cart-item-name'>{name}</p>
@@ -27,13 +30,14 @@ class CartItem extends Component {
                     <p className='cart-item-quantity'>Quantity : {quantity}</p>
                     <p className='cart-item-total-price'>Total Price : {price*quantity}</p>
                 </div>
+                </Link >
                 <div className='delete-icon'>
-                    <button type="button" onClick={this.onDeleteCartItem}>
+                    <button className='delete-button' type="button" onClick={this.onDeleteCartItem}>
                         <MdDelete style={{ fontSize: '25px' }}/>
                     </button>
                 
                 </div>
-            </Link>
+            </div>
         ) 
     }
 

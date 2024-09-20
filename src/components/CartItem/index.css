@@ -15,7 +15,13 @@
     text-decoration: none;
     color: black;
 }
-
+.img-details-container{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
 
 .cart-item-container img{
     height: 160px;
@@ -71,4 +77,8 @@
    align-self: flex-start;
     padding-right: 10px;
     height: 30px;
+  }
+  .delete-button{
+    border: none;
+    background-color: #ffff;
   }
