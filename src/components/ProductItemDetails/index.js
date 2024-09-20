@@ -112,7 +112,7 @@ class ProductItemDetails extends Component {
       method: 'POST',
       body:JSON.stringify(productDetails)
     }
-    const response=await fetch("http://localhost:4000/cart/add",options)
+    const response=await fetch("https://shopper-backend-app.onrender.com/cart/add",options)
     if(response.ok){ 
     const data=await response.json()
     const {message}=data
