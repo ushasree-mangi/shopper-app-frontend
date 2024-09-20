@@ -55,9 +55,10 @@ class Cart extends Component {
   }
 
   deleteCartItem=async(id)=>{
-    console.log(id)
+   
     const apiUrl = `https://shopper-backend-app.onrender.com/cart/`
     const jwtToken = Cookies.get('jwt_token')
+    console.log(jwtToken)
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -67,11 +68,19 @@ class Cart extends Component {
       body:JSON.stringify({productId:id})
     }
     const response = await fetch(apiUrl, options)
+    const fetchedData = await response.json()
     if (response.ok) {
-      this.getCartItems()
+      
+      const {cartItems,message} = fetchedData
+     console.log(message)
+      this.setState({
+        cartItemsList:cartItems,
+       
+      })
     }
     else{
-      alert("An Error occurred while deleting cart item")
+      const {error}=fetchedData
+      alert(error)
     }
   }
     
