@@ -23,7 +23,8 @@
 
 
 .login-form-img {
-  width: 278px;
+  width: 400px;
+  height: 600px;
   margin-bottom: 30px;
 }
 
@@ -89,6 +90,10 @@
   padding: 8px 16px 8px 16px;
   outline: none;
 }
+.login-page-question-txt{
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+}
 
 .login-button {
   font-family: 'Arial', sans-serif;
@@ -99,7 +104,7 @@
   width: 150px;
   margin-top: 20px;
   margin-bottom: 2px;
-  background-color: #ff4141;
+  background-color: #FF5E0E;
   border: none;
   outline: none;
   cursor: pointer;

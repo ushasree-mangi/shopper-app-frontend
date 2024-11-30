@@ -22,13 +22,13 @@
 }
 
 
-.login-form-img {
+.register-form-img {
   width: 278px;
   margin-bottom: 30px;
 }
 
 @media screen and (min-width: 768px) {
-  .login-form-img {
+  .register-form-img {
     height: 100%;
     margin-bottom:0px;
   }
@@ -99,7 +99,7 @@
   width: 150px;
   margin-top: 20px;
   margin-bottom: 2px;
-  background-color: #ff4141;
+  background-color: #FF5E0E;
   border: none;
   outline: none;
   cursor: pointer;

@@ -118,7 +118,7 @@ class LoginForm extends Component {
       <div className="login-form-container">
         <img
           src="https://res.cloudinary.com/dtcogqxhp/image/upload/v1725691464/photo-young-brunette-woman-sunglasses-holding-colorful-shopping-bags-high-quality-photo_2831-9808_burcig.jpg"
-          className="login-form-img"
+          className="register-form-img"
           alt="website logo"
         />
        

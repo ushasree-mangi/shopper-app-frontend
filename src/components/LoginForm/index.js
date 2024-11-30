@@ -118,11 +118,14 @@ class LoginForm extends Component {
     }
     return (
       <div className="login-form-container">
+        <div>
+        <p className='login-page-question-txt'>Want to do shopping? Let's sign in!</p>
         <img
-          src="https://res.cloudinary.com/dtcogqxhp/image/upload/v1725691464/photo-young-brunette-woman-sunglasses-holding-colorful-shopping-bags-high-quality-photo_2831-9808_burcig.jpg"
+          src="https://res.cloudinary.com/dtcogqxhp/image/upload/v1732973647/421aacf1c4b3eb8fb7f5a643ea87e094_gqdih9.jpg"
           className="login-form-img"
           alt="website logo"
         />
+        </div>
         <form className="form-container" onSubmit={this.submitForm}>
            <h1>Login</h1>
           <div className="input-container">{this.renderUsernameField()}</div>
